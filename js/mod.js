@@ -43,6 +43,9 @@ function getPointGen() {
 
 	if (hasUpgrade('w', 11)) gain = new Decimal(0.5)
     if (hasUpgrade('w', 12)) gain = gain.times(upgradeEffect('w', 12))
+	if (hasUpgrade('s', 11)) gain = gain.mul(3)
+	if (inChallenge('s', 11)) gain = gain.mul(0.75)
+	if (inChallenge('s', 12)) gain = gain.mul(0.6)
 	
 	return gain
 }
